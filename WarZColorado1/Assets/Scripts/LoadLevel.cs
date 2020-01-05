@@ -20,10 +20,10 @@ public class LoadLevel : MonoBehaviour
 
     int LoadLevel_Objects(float BarRange) //This is the LoadLevel_Objects function from WarZ (In c++) Currently need to convert to C# and take care of other things.
     {
-       string path;
-       path = @"C:\Users\m70b1\Documents\GitHub\UnityColorado\WarZColorado1\Assets\Scripts\LevelData.xml"; //manual file path at the moment
 
-        string path = Path.GetTempFileName();
+        string path;
+        path = @"C:\Users\m70b1\Documents\GitHub\UnityColorado\WarZColorado1\Assets\Scripts\LevelData.xml"; //manual file path at the moment 
+        //= Path.GetTempFileName();
         using (FileStream fs = File.Open(path, FileMode.Open, FileAccess.Write, FileShare.None))
         {
             Byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
@@ -31,10 +31,10 @@ public class LoadLevel : MonoBehaviour
             fs.Write(info, 0, info.Length);
         }
 
-        sprintf(fname, "%s\\LevelData.xml", r3dGameLevel::GetHomeDir());
+        /*sprintf(fname, "%s\\LevelData.xml", r3dGameLevel::GetHomeDir());
         r3dFile* f = r3d_open(fname, "rb");
         if (!f)
-            return 0;
+            return 0;*/
 
         char* fileBuffer = new char[f->size + 1];
         fread(fileBuffer, f->size, 1, f);
