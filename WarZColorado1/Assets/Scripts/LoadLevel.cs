@@ -79,7 +79,7 @@ public class LoadLevel : MonoBehaviour
         LoadLevelObjects(xmlLevel, BarRange);
 
         // delete only after we are done parsing xml!
-        delete[] fileBuffer;
+       // delete[] fileBuffer;
 
         return 1;
     }
